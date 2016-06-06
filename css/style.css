@@ -1,0 +1,91 @@
+body {
+	font-size:16px;
+	color:#FFF;
+	text-align:center;
+}
+
+.black-text {
+	color:#000;
+}
+
+.uppercase, h1, h3, h5 {
+	text-transform: uppercase;
+	margin-bottom:30px;
+}
+
+h5 {
+	color:#13A9B0;
+}
+
+.padding-50 {
+	padding:50px;
+}
+
+.margin-bottom-20 {
+	margin-bottom:20px;
+}
+
+/* navbar */
+.navbar-default {
+	background-color:transparent;
+	border-color:transparent;
+}
+
+.navbar-default .navbar-header .navbar-brand {
+	font-weight: bold;
+	font-size:14px;
+	color:#FFF;
+}
+
+.navbar-default .nav > li>a {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size:14px;
+    color: #FFF;
+}
+
+.navbar-default .nav > li>a:hover {
+	color:#000;
+}
+
+.navbar-default.affix {
+    background-color: #000;
+ }  
+
+ .navbar-default.affix .navbar-header .navbar-brand:hover {
+    color: #4f817e;
+}   
+
+
+.navbar-default.affix .nav > li>a:hover {
+    color: #4f817e;
+}
+
+/* header */
+header {
+	position:relative;
+	width: 100%;
+    padding: 150px;
+    background-image: url(../img/Japanese-Pioneers-Cover.jpg);
+}
+
+/* teal divs */
+#about, #contact div {
+	background-color:#4f817e;
+	width: 100%;
+}
+
+/* white background w/ black text */
+#definitions, #testimonials div {
+	color:#000;
+}
+
+/* testimonial font size */
+.font-small {
+	font-size: 14px;
+}
+
+/* no padding for photos */
+#photos div {
+	padding:0;
+}
