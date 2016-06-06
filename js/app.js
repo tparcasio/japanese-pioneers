@@ -2,18 +2,32 @@ $(document).ready(function(){
 
 	//Swap out "affix-top" class for "affix"
 	$(window).on("scroll", function() {
-      var scrollDistance = $(window).scrollTop();
+     	 var scrollDistance = $(window).scrollTop();
 
-      if (scrollDistance > 50) {
-          $("#mainNav")
-            .removeClass("affix-top")
-            .addClass("affix");
-      } else {
-          $("#mainNav")
-            .removeClass("affix")
-            .addClass("affix-top");
-      }
-  });
+      	if (scrollDistance > 50) {
+          	$("#mainNav")
+	            .removeClass("affix-top")
+	            .addClass("affix");
+      	} else {
+          	$("#mainNav")
+	            .removeClass("affix")
+	            .addClass("affix-top");
+      	}
+  	});
+
+	//When the navbar links are clicked, animate a page scroll down to that anchor
+	  	$(document).on("click", ".page-scroll", function() {
+	     	 event.preventDefault(); //Elimiates flashing
+
+	     	 var href = $(this).attr("href");
+
+	      	$("body").animate({
+	        	  scrollTop: $(href).offset().top
+	     	 }, 1000);
+	 	 });
+
+  	//Use Bootstrap scrollspy to change the navbar links on scroll
+  	$('body').scrollspy({ target: '#mainNav' });
 
 	//Wiki ajax request
 	$(document).on("click", "#term", function() {

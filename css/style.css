@@ -61,6 +61,15 @@ h5 {
     color: #4f817e;
 }
 
+.navbar-default .nav > li.active>a {
+    color: #4f817e!important;
+    background-color: transparent;
+}
+
+.navbar-default .nav > li.active>a {
+    background-color: transparent;
+}
+
 /* header */
 header {
 	position:relative;
