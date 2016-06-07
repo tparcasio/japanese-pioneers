@@ -34,24 +34,24 @@ $(document).ready(function(){
 		var term = $(this).html();
 		var term = term.replace(/ /g, "_");
 
-		alert(term);
-
-		// $.ajax({
-		// 	type: "GET",
-		// 	url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=Jimi_Hendrix",
-		// 	success: function(lookup) {
-		// 		//Handlebars tempalte
-		// 		HANDLE.renderTemplate({
-		// 			templateSource: "#wiki-template",
-		// 			data: lookup,
-		// 			where: "#wiki-info",
-		// 			clearOriginal: true
-		// 		});
-		// 	},
-		// 	error: function() {
-		// 		alert("Error contacting Wiki");
-		// 	}
-		// });
+		$.ajax({
+			type: "GET",
+			url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&prop=text&section=0&page=" + term + "&callback=?",
+	        contentType: "application/json; charset=utf-8",
+	        dataType: "json",
+			success: function(lookup) {
+				//Handlebars tempalte
+				HANDLE.renderTemplate({
+					templateSource: "#wiki-template",
+					data: lookup.parse.text,
+					where: "#wiki-info",
+					clearOriginal: true
+				});
+			},
+			error: function() {
+				alert("Error contacting Wiki");
+			}
+		});
 
 	});
 
