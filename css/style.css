@@ -55,6 +55,14 @@ aside {
     padding: 0;
 }
 
+.padding-top {
+    padding-top:50px;
+}
+
+.margin-bottom {
+    margin-bottom:10px;
+}
+
 .navbar-default {
 	border:0;
     background-color: #fff;

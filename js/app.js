@@ -40,13 +40,17 @@ $(document).ready(function(){
 	        contentType: "application/json; charset=utf-8",
 	        dataType: "json",
 			success: function(lookup) {
-				//Handlebars tempalte
-				HANDLE.renderTemplate({
-					templateSource: "#wiki-template",
-					data: lookup.parse.text,
-					where: "#wiki-info",
-					clearOriginal: true
-				});
+				var blurb = $("#wiki-info").html(lookup.parse.text["*"]);
+
+				// remove links as they will not work
+	            blurb.find('a').each(function() { $(this).replaceWith($(this).html()); });
+	 
+	            // remove any references
+	            blurb.find('sup').remove();
+	 
+	            // remove cite error
+	            blurb.find('.mw-ext-cite-error').remove();
+	            $('#wiki-info').html($(blurb).find('p'));
 			},
 			error: function() {
 				alert("Error contacting Wiki");
